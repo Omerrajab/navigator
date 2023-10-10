@@ -1,12 +1,80 @@
 import React, { useState } from "react";
 import { Route, NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { CodeIcon, HamburgetMenuClose, HamburgetMenuOpen } from "../Icons";
-
+import { AboutIcon, BlogIcon, CodeIcon, ContactIcon, HamburgetMenuClose, HamburgetMenuOpen, HomeIcon } from "../Icons";
+interface INavItem {
+    title: string,
+    route: string,
+    icon: any,
+    displayOrder: number
+}
 function NavBar() {
     const [click, setClick] = useState(false);
-
+    const navItems: INavItem[] = [{
+        title: 'Home',
+        route: '/',
+        icon: <HomeIcon />,
+        displayOrder: 1
+    },
+    {
+        title: 'About',
+        route: '/',
+        icon: <AboutIcon />,
+        displayOrder: 2
+    },
+    {
+        title: 'Blog',
+        route: '/',
+        icon: <BlogIcon />,
+        displayOrder: 3
+    },
+    {
+        title: 'Contact Us',
+        route: '/',
+        icon: <AboutIcon />,
+        displayOrder: 4
+    },
+    {
+        title: 'Home',
+        route: '/',
+        icon: <HomeIcon />,
+        displayOrder: 1
+    },
+    {
+        title: 'About',
+        route: '/',
+        icon: <AboutIcon />,
+        displayOrder: 2
+    },
+    {
+        title: 'Blog',
+        route: '/',
+        icon: <BlogIcon />,
+        displayOrder: 3
+    },
+    {
+        title: 'Contact Us',
+        route: '/',
+        icon: <AboutIcon />,
+        displayOrder: 4
+    }]
     const handleClick = () => setClick(!click);
+    const navItem = (item: INavItem) => {
+        return (<li className="nav-item">
+            <NavLink
+
+                to={item.route}
+                // activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+            >
+                <span className="icon">
+                    {item.icon}
+                </span>
+                <span> {item.title}</span>
+            </NavLink>
+        </li>)
+    }
     return (
         <>
 
@@ -14,13 +82,16 @@ function NavBar() {
                 <div className="nav-container">
 
                     <NavLink to="/" className="nav-logo">
-                        
+
                         <span className="icon">
                             <CodeIcon />
                         </span><span>Ideas</span>
                     </NavLink>
 
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
+                        {
+                            navItems.map(link => navItem(link))
+                        }
                         <li className="nav-item">
                             <NavLink
 
@@ -29,7 +100,10 @@ function NavBar() {
                                 className="nav-links"
                                 onClick={handleClick}
                             >
-                                Home
+                                <span className="icon">
+                                    <HomeIcon />
+                                </span>
+                                <span> Home</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -40,7 +114,10 @@ function NavBar() {
                                 className="nav-links"
                                 onClick={handleClick}
                             >
-                                About
+                                <span className="icon">
+                                    <AboutIcon />
+                                </span>
+                                <span> About</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -51,7 +128,10 @@ function NavBar() {
                                 className="nav-links"
                                 onClick={handleClick}
                             >
-                                Blog
+                                <span className="icon">
+                                    <BlogIcon />
+                                </span>
+                                <span> Blog</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -62,7 +142,12 @@ function NavBar() {
                                 className="nav-links"
                                 onClick={handleClick}
                             >
-                                Contact Us
+
+                                <span className="icon">
+                                    <HomeIcon />
+                                </span>
+                                <span>Contact Us</span>
+
                             </NavLink>
                         </li>
                     </ul>
@@ -71,11 +156,11 @@ function NavBar() {
 
                         {click ? (
                             <span className="icon">
-                                <HamburgetMenuOpen />{" "}
+                                <HamburgetMenuClose />{" "}
                             </span>
                         ) : (
                             <span className="icon">
-                                <HamburgetMenuClose />
+                                <HamburgetMenuOpen />
                             </span>
                         )}
                     </div>
