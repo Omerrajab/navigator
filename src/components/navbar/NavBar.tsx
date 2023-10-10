@@ -14,11 +14,10 @@ function NavBar() {
                 <div className="nav-container">
 
                     <NavLink to="/" className="nav-logo">
-                        <span>Organization</span>
-                        {/* <i className="fas fa-code"></i> */}
+                        
                         <span className="icon">
                             <CodeIcon />
-                        </span>
+                        </span><span>Ideas</span>
                     </NavLink>
 
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
