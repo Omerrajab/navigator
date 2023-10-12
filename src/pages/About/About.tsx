@@ -1,10 +1,10 @@
 import React from "react";
 import Content from "../../components/Content/Content";
 
-export const Home = () => {
+export const About = () => {
   return (
     <div>
-      <h5>Home</h5>
+      <h5>About</h5>
       <Content />
     </div>
   );
