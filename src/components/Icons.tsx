@@ -3,7 +3,11 @@
 
 import { SVGProps } from "react";
 import { JSX } from "react/jsx-runtime";
+import logoImg from "../../src/Assets/images/Supplylite-logo-file-1.png"
+export const Logo = () => {
 
+  return <img style={{ width: '100%', height: '100%'}} src={logoImg} alt="My Image" />
+}
 export const CodeIcon = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
 
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +16,7 @@ export const CodeIcon = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement
     preserveAspectRatio="xMidYMid meet">
 
     <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-      fill="currentColor" stroke="none">
+      fill="#f5b921" stroke="none">
       <path d="M220 630 c0 -5 -9 -10 -20 -10 -11 0 -20 -4 -20 -10 0 -5 -7 -10 -15
   -10 -20 0 -125 -105 -125 -125 0 -8 -4 -15 -10 -15 -5 0 -10 -13 -10 -30 0
   -16 -4 -30 -10 -30 -6 0 -10 -33 -10 -80 0 -47 4 -80 10 -80 6 0 10 -13 10

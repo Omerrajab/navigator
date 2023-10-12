@@ -1,9 +1,11 @@
 import React from "react";
+import Content from "../../components/Content/Content";
 
 export const Blog = () => {
   return (
     <div>
-      <h1>Blog</h1>
+      <h5>Blog</h5>
+      <Content />
     </div>
   );
 };

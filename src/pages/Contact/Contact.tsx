@@ -1,9 +1,11 @@
 import React from "react";
+import Content from "../../components/Content/Content";
 
 export const Contact = () => {
   return (
     <div>
-      <h1>Contact Us</h1>
+         <h5>Contact Us</h5>
+      <Content />
     </div>
   );
 };
